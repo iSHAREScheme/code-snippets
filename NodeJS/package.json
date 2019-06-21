@@ -1,0 +1,25 @@
+{
+  "name": "ishare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "transfollow.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.0",
+    "node-forge": "^0.8.2",
+    "nodejs-base64": "^1.0.3",
+    "passport-saml": "^1.0.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "urldecode": "^1.0.1",
+    "urlencoded-body-parser": "^2.0.1"
+  }
+}
