@@ -37,7 +37,7 @@ module.exports = {
 	var payload = {
 		"iss": 'xxxxxx',
 		"sub": 'xxxxxx',
-		"jti": "dwqeyug43lb-werfbiyqwr0-wvrhbw82-sadvbjch",
+		"jti": "ergth5445-rthy545-dfgdfh-4545",
 		"exp": iat+30,
 		"iat": iat,
 		"capabilities_info": capabilities
