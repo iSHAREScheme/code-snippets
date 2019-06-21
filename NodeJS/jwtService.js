@@ -11,7 +11,7 @@ module.exports = {
 		"iss": 'xxxxxx',
 		"sub": 'xxxxxx',
 		"aud": "EU.EORI.NL000000000",
-		"jti": "dwqeyug43lb-werfbiyqwr0-wvrhbw82-sadvbjch",
+		"jti": "rtnre6rht234-y4n4656-wvrhbw82-sadvbjch",
 		"exp": iat+30,
 		"iat": iat
 	};
