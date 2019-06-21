@@ -4,4 +4,4 @@ EORI number fields are filled with ‘xxxxxx’
 
 x5c values must filled with party’s public key.
 
-privateKey value must get from party’s certificate. 
+privateKey values must get from party’s certificate. 
