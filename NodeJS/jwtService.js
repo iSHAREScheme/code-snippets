@@ -1,6 +1,6 @@
 const fs    = require('fs');
 const jwt   = require('jsonwebtoken');
-const service = require('./iShareService.js')
+const service = require('./index.js')
 const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
 	var payload = {
 		"iss": 'xxxxxx',
 		"sub": 'xxxxxx',
-		"aud": "EU.EORI.NL000000000",
+		"aud": "TBD",
 		"jti": "rtnre6rht234-y4n4656-wvrhbw82-sadvbjch",
 		"exp": iat+30,
 		"iat": iat
