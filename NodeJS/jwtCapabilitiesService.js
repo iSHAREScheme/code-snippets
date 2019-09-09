@@ -6,7 +6,7 @@ const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 const base_url = 'https://innopaytest.azurewebsites.net'
 
 const capabilities = {
-		"party_id": "EU.EORI.NL812458837",
+		"party_id": "EU.EORI.XXXXXXXXX",
 		"supported_versions": [
 			{
 				"version": "0.1",
