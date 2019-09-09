@@ -1,8 +1,10 @@
 const fs    = require('fs');
 const jwt   = require('jsonwebtoken');
-const service = require('./iShareService.js')
+const crypto = require('crypto');
+const service = require('./index.js')
 const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 
+const x5c_value = ''
 const base_url = 'https://innopaytest.azurewebsites.net'
 
 const capabilities = {
@@ -35,11 +37,11 @@ const capabilities = {
 module.exports = {
  sign: ( $Options) => {
 	var iat     = Math.floor(new Date() / 1000)
-	var header  = {"x5c":[""]};
+	var header  = {"x5c":[ x5c_value]};
 	var payload = {
 		"iss": 'xxxxxx',
 		"sub": 'xxxxxx',
-		"jti": "ergth5445-rthy545-dfgdfh-4545",
+		"jti": crypto.randomBytes(16).toString('hex'),
 		"exp": iat+30,
 		"iat": iat,
 		"capabilities_info": capabilities
