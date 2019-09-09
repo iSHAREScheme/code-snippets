@@ -1,6 +1,6 @@
 const fs    = require('fs');
 const jwt   = require('jsonwebtoken');
-const service = require('./iShareService.js')
+const service = require('./index.js')
 const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 
 
