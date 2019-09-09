@@ -3,26 +3,28 @@ const jwt   = require('jsonwebtoken');
 const service = require('./iShareService.js')
 const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 
+const base_url = 'https://innopaytest.azurewebsites.net'
+
 const capabilities = {
-		"party_id": "xxxxxx",
+		"party_id": "EU.EORI.NL812458837",
 		"supported_versions": [
 			{
-				"version": "1.0",
+				"version": "0.1",
 				"supported_features": [
 					{
 						"public": [
 							{
-								"id": "DFE2392-FMEKLL555-FGR4545-DF353-JKDJKDE3434",
+								"id": "DFE2392-FMEKLL555",
 								"feature": "capabilities",
-								"description": "Retrieves JORR-IT capabilities",
-								"url": "https://dev.jorr-itsolutions.nl/ords/wms/ishare/capabilities",
-								"token_endpoint": "https://dev.jorr-itsolutions.nl/ords/wms/ishare/token"
+								"description": "Retrieves API capabilities",
+								"url": base_url + "/capabilities",
+								"token_endpoint": base_url + "/token"
 							},
 							{
-								"id": "3V45VH3589-KLW920SN-CKS028JC-OSNCO2U8K-CLKW927KV083CO",
+								"id": "3V45VH3589-KLW920SN",
 								"feature": "access token",
 								"description": "Obtains access token",
-								"url": "https://dev.jorr-itsolutions.nl/ords/wms/ishare/token"
+								"url": base_url + "/token"
 							}
 						]
 					}
