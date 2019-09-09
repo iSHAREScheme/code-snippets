@@ -1,5 +1,6 @@
 const fs    = require('fs');
 const jwt   = require('jsonwebtoken');
+const crypto = require('crypto');
 const service = require('./index.js')
 const privateKey  = fs.readFileSync('./RSA_PRIVATE_KEY.key', 'utf8');
 
@@ -11,7 +12,7 @@ module.exports = {
 		"iss": 'xxxxxx',
 		"sub": 'xxxxxx',
 		"aud": "TBD",
-		"jti": "rtnre6rht234-y4n4656-wvrhbw82-sadvbjch",
+		"jti": crypto.randomBytes(16).toString('hex'),
 		"exp": iat+30,
 		"iat": iat
 	};
