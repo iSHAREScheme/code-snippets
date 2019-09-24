@@ -7,7 +7,6 @@ const request = require('request-promise');
 const bodyParser = require('body-parser')
 const jwt = require('jsonwebtoken');
 const parse = require('urlencoded-body-parser')
-const csv = require('csv-parser')
 const port = process.env.PORT || 1337;
 
 //your information
@@ -23,20 +22,7 @@ const caStore = forge.pki.createCaStore([ iSHARETestCA_TLS ]);
 //to get key 
 const NodeRSA = require('node-rsa');
 const privateKey  = fs.readFileSync('./linkto.key.decr.pem', 'utf8');
-
-
 const results = [];
-
-fs.createReadStream('data.csv')
-  .pipe(csv({ separator: ';' }))
-  .on('data', (data) => results.push(data))
-  .on('end', () => {
-    //console.log(results);
-    // [
-    //   { NAME: 'Daffy Duck', AGE: '24' },
-    //   { NAME: 'Bugs Bunny', AGE: '22' }
-    // ]
-  });
 
 function getCertificatePublicKeyBitLength(pemFile) {
     const certificate = forge.pki.certificateFromPem(pemFile);
@@ -314,6 +300,7 @@ app.post('/check_ca', async function(req, res) {
         });
 		return
 	}
+	// 5 is addeed here because of time sync issues
 	if(iat>epoch+5){
 		console.log('Client assertion JWT payload '+ 'iat'+ ' field is after current time')
         console.log(epoch)
