@@ -12,5 +12,5 @@ Shell script which accepts p12 file and extracts following files
 Note: the above files are created in current directory where the script is executed                
                                                                     
 Version 1.0                                                             
-Developed by: Rajiv Rajani (rajiv@ishare.eu)                            
+Developed by: Rajiv Rajani                           
 Disclaimer: Please handle private keys with care and securely, author is not responsible in any way for any damage caused.
