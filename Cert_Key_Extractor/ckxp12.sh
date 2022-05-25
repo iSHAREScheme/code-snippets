@@ -50,6 +50,7 @@ p12pass="pass:"$p12pass
 #extract pem (public key certificate) and RSA private key
 pubfilename=$filename"pub.pem"
 fcfilename=$filename"pubfc.pem"
+x5cfilename=$filename"pubx5c.pem"
 privfilename=$filename"priv.key"
 
 openssl pkcs12 -in $PKCSFL -clcerts -nokeys -passin $p12pass -out $pubfilename
@@ -60,6 +61,11 @@ fi
 openssl pkcs12 -in $PKCSFL -nokeys -passin $p12pass -out $fcfilename
 if [ -f $fcfilename ]; then
     printf "$fcfilename successfully created.\n"
+fi
+
+openssl pkcs12 -in $PKCSFL -nokeys -passin $p12pass | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > $x5cfilename
+if [ -f $x5cfilename ]; then
+    printf "$x5cfilename successfully created.\n"
 fi
 
 openssl pkcs12 -in $PKCSFL -nocerts -nodes -passin $p12pass | openssl rsa > $privfilename
