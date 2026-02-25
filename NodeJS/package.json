@@ -14,7 +14,7 @@
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.0",
-    "node-forge": "^0.8.2",
+    "node-forge": "^0.10.0",
     "nodejs-base64": "^1.0.3",
     "passport-saml": "^1.0.0",
     "request": "^2.88.0",
